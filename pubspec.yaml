@@ -1,0 +1,16 @@
+name: cordova
+description: Dart wrapper for cordova
+version: 1.0.0
+homepage: https://github.com/moczix/dart_cordova
+author: Moczniak <czornypan@gmail.com>
+
+environment:
+  sdk: '>=2.1.0 <3.0.0'
+
+dependencies:
+  js: ">=0.6.0 <0.7.0"
+
+dev_dependencies:
+  build_runner: ^1.1.2
+  build_web_compilers: ^0.4.4
+  test: ^1.5.1
