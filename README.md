@@ -9,7 +9,7 @@ import Cordova from this package and you ready to go!
 ## installation 
 ```
 dependencies:
-  cordova: ^1.0.0
+  cordova: ^1.0.1
 ```
 
 ## import
