@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'dart:html';
-
+/// Cordova class is singleton here
 class Cordova {
 
   static final Cordova _singleton = new Cordova._internal();
@@ -18,7 +18,7 @@ class Cordova {
   Cordova._internal() {
     window.on['deviceready'].take(1).listen((Event event) => _isDeviceReady = true);
   }
-
+  /// future of deviceready event
   Future<bool> isDeviceReady() {
     if (_isDeviceReady) {
       return Future.value(true);
