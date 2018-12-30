@@ -6,17 +6,17 @@ class Cordova {
   static final Cordova _singleton = new Cordova._internal();
   bool _isDeviceReady = false;
 
-  Stream<Event> _onPause = window.on['pause'].asBroadcastStream();
-  Stream<Event> _onResume = window.on['resume'].asBroadcastStream();
-  Stream<Event> _onMenuButton = window.on['menubutton'].asBroadcastStream();
-  Stream<Event> _onBackButton = window.on['backbutton'].asBroadcastStream();
+  Stream<Event> _onPause = document.on['pause'].asBroadcastStream();
+  Stream<Event> _onResume = document.on['resume'].asBroadcastStream();
+  Stream<Event> _onMenuButton = document.on['menubutton'].asBroadcastStream();
+  Stream<Event> _onBackButton = document.on['backbutton'].asBroadcastStream();
 
   factory Cordova() {
     return _singleton;
   }
 
   Cordova._internal() {
-    window.on['deviceready'].take(1).listen((Event event) => _isDeviceReady = true);
+    document.on['deviceready'].take(1).listen((Event event) => _isDeviceReady = true);
   }
   /// future of deviceready event
   Future<bool> isDeviceReady() {
@@ -24,7 +24,7 @@ class Cordova {
       return Future.value(true);
     }
     Completer<bool> completer = new Completer();
-     window.on['deviceready'].take(1).listen((Event event){
+     document.on['deviceready'].take(1).listen((Event event){
       _isDeviceReady = true;
       completer.complete();
     });
