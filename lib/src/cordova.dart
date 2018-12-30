@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:html';
+
 /// Cordova class is singleton here
 class Cordova {
-
   static final Cordova _singleton = new Cordova._internal();
   bool _isDeviceReady = false;
 
@@ -16,15 +16,18 @@ class Cordova {
   }
 
   Cordova._internal() {
-    document.on['deviceready'].take(1).listen((Event event) => _isDeviceReady = true);
+    document.on['deviceready']
+        .take(1)
+        .listen((Event event) => _isDeviceReady = true);
   }
+
   /// future of deviceready event
   Future<bool> isDeviceReady() {
     if (_isDeviceReady) {
       return Future.value(true);
     }
     Completer<bool> completer = new Completer();
-     document.on['deviceready'].take(1).listen((Event event){
+    document.on['deviceready'].take(1).listen((Event event) {
       _isDeviceReady = true;
       completer.complete();
     });
@@ -35,5 +38,4 @@ class Cordova {
   Stream<Event> onResume() => _onResume;
   Stream<Event> onMenuButton() => _onMenuButton;
   Stream<Event> onBackButton() => _onBackButton;
-
 }

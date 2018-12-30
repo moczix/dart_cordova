@@ -1,14 +1,11 @@
 name: cordova
-description: Dart wrapper for cordova
-version: 1.0.0
+description: Dart wrapper for cordova, for those who wanna use angular-dart with cordova
+version: 1.0.1
 homepage: https://github.com/moczix/dart_cordova
 author: Moczniak <czornypan@gmail.com>
 
 environment:
   sdk: '>=2.1.0 <3.0.0'
-
-dependencies:
-  js: ">=0.6.0 <0.7.0"
 
 dev_dependencies:
   build_runner: ^1.1.2
