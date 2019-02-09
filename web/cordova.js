@@ -6,3 +6,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.dispatchEvent(deviceIsReady);
   });
 });
+
+window.cordova = {
+}

@@ -6,4 +6,8 @@ void main() {
   cordova.isDeviceReady().then((bool isReady) {
     print('device is ready');
   });
+
+
+  print('isExist: ' + cordova.isExist().toString());
+
 }

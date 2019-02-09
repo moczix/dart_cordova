@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:html';
+import 'dart:js';
 
 /// Cordova class is singleton here
 class Cordova {
@@ -32,6 +33,10 @@ class Cordova {
       completer.complete();
     });
     return completer.future;
+  }
+
+  bool isExist() {
+    return JsObject.fromBrowserObject(context['window']).hasProperty('cordova');
   }
 
   Stream<Event> onPause() => _onPause;

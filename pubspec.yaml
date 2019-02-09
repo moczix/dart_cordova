@@ -1,6 +1,6 @@
 name: cordova
 description: Dart wrapper for cordova, for those who wanna use angular-dart with cordova
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/moczix/dart_cordova
 author: Moczniak <czornypan@gmail.com>
 
